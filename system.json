@@ -30,9 +30,9 @@
   "gridUnits": "ft",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
-  "url": "",
-  "manifest": "",
+  "url": "https://github.com/panoptical/murderballet",
+  "manifest": "https://raw.githubusercontent.com/panoptical/murderballet/master/system.json",
   "download": "",
-  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "license": "MIT License",
   "changelog": "CHANGELOG.md"
 }
