@@ -32,7 +32,7 @@
   "secondaryTokenAttribute": "power",
   "url": "https://github.com/panoptical/murderballet",
   "manifest": "https://raw.githubusercontent.com/panoptical/murderballet/master/system.json",
-  "download": "",
+  "download": "https://github.com/panoptical/murderballet/archive/refs/tags/v1.0.0.zip",
   "license": "MIT License",
   "changelog": "CHANGELOG.md"
 }
