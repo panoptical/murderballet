@@ -1,0 +1,89 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+      use both the "grid" and "grid-Ncol" class where "N" can be any number
+      from 1 to 12 and will create that number of columns.  --}}
+      <div class="resources grid grid-2col">
+
+        {{!-- "flex-group-center" is also defined in the _grid.scss file
+        and it will add a small amount of padding, a border, and will
+        center all of its child elements content and text. --}}
+
+
+        <div class="resource flex-group-center">
+		  <div class="abilities flexcol">
+			{{#each system.abilities as |ability key|}}
+			<div class="ability flexrow flex-group-center">
+			  <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d6" data-label="{{ability.label}}">{{ability.label}}</label>
+			  <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+			</div>
+			{{/each}}
+		  </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.wounds.value" class="resource-label">Wounds</label>
+          <div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="system.wounds.value" value="{{system.wounds.value}}" data-dtype="Number"/>
+			<span> / </span>
+			<input type="text" name="system.wounds.max" value="{{system.wounds.max}}" data-dtype="Number"/>
+          </div>
+		  <label for="system.coins.value" class="resource-label">Coins</label>
+          <div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="system.coins.value" value="{{system.coins.value}}" data-dtype="Number"/>
+          </div>
+          <label for="system.armor-save.value" class="resource-label">Armor Save</label>
+          <div class="resource-content flexrow flex-center flex-between">
+			<input type="text" name="system.armor-save.value" value="{{system.armor-save.value}}" data-dtype="Number"/>
+          </div>
+
+        </div>
+		
+      </div>
+
+	  
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="gear">Gear</a>
+    <a class="item" data-tab="exploits">Exploits</a>
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="effects">Effects</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="description">
+      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
+      {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+	
+	{{!-- Owned Items Tab --}}
+    <div class="tab items" data-group="primary" data-tab="exploits">
+       {{> "systems/murderballet/templates/actor/parts/actor-exploits.html"}}
+    </div>
+
+    {{!-- Owned Items Tab --}}
+    <div class="tab items" data-group="primary" data-tab="gear">
+       {{> "systems/murderballet/templates/actor/parts/actor-items.html"}}
+    </div>
+
+    {{!-- Active Effects Tab --}}
+    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+      {{> "systems/murderballet/templates/actor/parts/actor-effects.html"}}
+    </div>
+
+  </section>
+</form>
+

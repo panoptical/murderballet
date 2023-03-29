@@ -1,0 +1,22 @@
+{
+  "MURDERBALLET.AbilityHot": "Hot",
+  "MURDERBALLET.AbilityCold": "Cold",
+  "MURDERBALLET.AbilitySwift": "Swift",
+  "MURDERBALLET.AbilityDeadly": "Deadly",
+  "MURDERBALLET.AbilityTough": "Tough",
+  "MURDERBALLET.AbilityWise": "Wise",
+
+  "MURDERBALLET.AbilityHotAbbr": "hot",
+  "MURDERBALLET.AbilityColdAbbr": "cold",
+  "MURDERBALLET.AbilitySwiftAbbr": "swift",
+  "MURDERBALLET.AbilityDeadlyAbbr": "deadly",
+  "MURDERBALLET.AbilityToughAbbr": "tough",
+  "MURDERBALLET.AbilityWiseAbbr": "wise",
+
+  "MURDERBALLET.EffectCreate": "Create Effect",
+  "MURDERBALLET.EffectToggle": "Toggle Effect",
+  "MURDERBALLET.EffectEdit": "Edit Effect",
+  "MURDERBALLET.EffectDelete": "Delete Effect",
+
+  "MURDERBALLET.Add": "Add"
+}

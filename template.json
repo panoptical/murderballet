@@ -1,0 +1,81 @@
+{
+  "Actor": {
+    "types": ["assassin", "rival", "enemy"],
+    "templates": {
+      "main": {
+        "abilities": {
+			"hot": {
+				"value": 2
+			},
+			"cold": {
+				"value": 2
+			},
+			"swift": {
+				"value": 2
+			},
+			"deadly": {
+				"value": 2
+			},
+			"tough": {
+				"value": 2
+			},
+			"wise": {
+				"value": 2
+			}
+		},
+		"wounds": {
+			"value": 0
+		},
+		"coins": {
+			"value": 0
+		},
+		"ghost-story": ""
+      },
+	  "common": {
+		"description": "",		  
+		"armor-save": {
+			"value": 0
+		}		  
+	  }
+    },
+    "assassin": {
+      "templates": ["common", "main"]
+    },
+    "rival": {
+      "templates": ["common", "main"]
+    },
+	"enemy": {
+	  "templates": ["common"]
+	}
+  },
+  "Item": {
+    "types": ["weapon", "armor", "reload", "gear", "exploit"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "weapon": {
+      "templates": ["base"],
+      "ammo": 0,
+	  "ammo-max": 0,
+      "range": "",
+      "notes": ""
+    },
+	"armor": {
+      "templates": ["base"],
+	  "armor-save": 0,
+	  "notes": ""
+	},
+    "reload": {
+      "templates": ["base"],
+	  "quantity": 0
+    },
+    "gear": {
+      "templates": ["base"]
+    },
+    "exploit": {
+      "templates": ["base"]
+    }
+  }
+}
